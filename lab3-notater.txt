@@ -1,0 +1,53 @@
+oppgave 1
+
+Task1
+	y = pitch 90 grader = 10
+	pitch 0 grader = 0
+	y akse = blå
+
+	z = rød
+
+	x = gul
+
+	Guroskop vs encoder:
+
+	One angle at a time:
+	-pitch is good
+	-elevation is good
+	-travelrate is good
+Task2
+	Two angles at a time:
+	Test 1: pithch and elevarion: pitch and elevation readings where good, but travelrate was not good
+	test 2: pitch and travelrate: pitch is good, travelrate has some deviation, elevationrate is not good.
+	test 3: elevation and travelrate: all measurements where ok, but some deviation
+
+	Reason for deviation is that the coordinate system of the IMU moves when we rotate the helicopter, but the 
+	coordinatesystem for the encoders is fixed
+
+	comparing angles from encoder with angles from IMU(with calculations)
+	the angles are very similar, but the elevation has some deviation. 
+	if pitch crosses pi/2 rad, the angle from the IMU will read -pi/2 rad, This is becouse tan is 
+
+	comparing rad/s from IMU with rad/s from eulertransformation block
+	without the transformation block, the elevation was not measured "correctly" since the coordinatesystem of the IMU 
+	changed as the pitch angle on the helicopter changed, while the helicopters coordinatesystem is static. When the transformation block
+	was included the measurement of elevation was corrected.
+Task3
+	comperason: encoder vs estimated:
+	the estimated values has some deviation from the decoder, some of the deviation is due to the fact that the encoder has zero values 
+	when initialized but the estimator measures zero as expected. The estimator was a little slower then the response from the encoders.
+	
+	comperason: estimator vs IMU raw data
+	the noise from the raw signal is reduced in the estimated values
+	
+	poleplacement:
+	-10,-8,-4,-7,-8--> estimate is responsive relative to IMU measurement
+	-100,-80,-40,-70,-80--> estimate is noisy, but very responsive
+	-1,-2,-1,-2.-1--> estimate is very slow, but supresses noise heavely
+
+
+
+	
+
+
+

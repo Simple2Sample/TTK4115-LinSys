@@ -1,0 +1,4 @@
+task 1: on grund: resembles white noise, small variance, and mean near zero. covariance; alot smaller then in air!
+	in air: resembles white noise, bigger variance, and mean near zero
+task 2: used c2d to transform into descrete system
+

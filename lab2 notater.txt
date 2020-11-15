@@ -1,0 +1,58 @@
+task 1
+
+controller is implemented
+
+task2 
+
+implemented matrices A and B in matlab, and computed the K values for a given pole placement
+Also added 8 to ~Vs
+
+poles:
+pole 1,2,3 = -0.1,-0.2,-0.3; result; somewhat stable, but slow response. Converges after some time
+
+pole 1,2,3 = -1,-2,-3; result; oscillating pitch angle, no convergence
+
+pole 1,2,3 = -0.7 -1.6 -2.1; result; oscillations on pitch angle but converges after some time.
+
+pole 1,2,3 = -0.7 -1.6 -1.9; same as previous test, slightly better
+
+task3
+
+
+LQR
+Q = 3x3 = I result: slow respons but stable and converges
+R = 2x2 = I
+
+increace of Q while R = I
+this results in a very responsive system, which converges fast. 
+We tried Q = 10 to 100 and it resulted in similar results.
+
+increase of R while Q = I
+this results in the controller output not responding very well.
+
+R = 0.2 Q = 10
+
+this results in responsive controll, without oscillations. 
+
+R = 0.2 Q = 100
+
+this results in a very responsive system, but with small oscillations
+
+LQR summary
+increasing R will limit the output U of the system. Increasing Q will make the system converge faster. 
+
+task 3
+
+Integral action implemented
+result with vs without integral action
+
+q = 100, r =1
+with integral action the response was faster then without
+
+
+
+
+
+
+
+
